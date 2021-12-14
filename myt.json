@@ -1,8 +1,8 @@
 {
   "username": "stefan.muehlbauer@smb-soft.de",
-  "password": "xxx",
-  "vin": "xxx",
+  "password": "12stefan34",
+  "vin": "SB1K53BE60E030440",
   "timezone": "Europe/Berlin",
   "use_remote_control": false,
-  "use_influxdb": true
+  "use_influxdb": false
 }
