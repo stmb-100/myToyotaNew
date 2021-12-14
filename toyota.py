@@ -120,7 +120,7 @@ class Myt:
             return max(files, key=os.path.getctime)
         return None
 
-    def login(self, locale='fi-fi'):
+    def login(self, locale='de-de'):
         """
         Do Toyota SSO login. Saves user data for configured account in self.user_data and sets token to self.headers.
         User data is saved to CACHE_DIR for reuse.
@@ -130,7 +130,13 @@ class Myt:
         login_headers = {'X-TME-BRAND': 'TOYOTA', 'X-TME-LC': locale, 'Accept': 'application/json, text/plain, */*',
                          'Sec-Fetch-Dest': 'empty'}
         log.info('Logging in...')
+        log.info(login_headers)
+        log.info(self.config_data)
+        #print(login_headers)
+        #print(self.config_data)
         r = requests.post('https://ssoms.toyota-europe.com/authenticate', headers=login_headers, json=self.config_data)
+        #print(r)
+        log.info(r)
         if r.status_code != 200:
             raise ValueError('Login failed, check your credentials! {}'.format(r.text))
         user_data = r.json()

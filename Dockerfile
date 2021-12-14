@@ -22,6 +22,6 @@ RUN pip install mytoyota
 
 #CMD [ "python3", "./myToyota.py" ]
 
-CMD [ "python3", "./myToyotaNew.py" ]
+#CMD [ "python3", "./myToyotaNew.py" ]
 
-#CMD  [ "python3", "./toyota.py" ]
+CMD  [ "python3", "./toyota.py" ]
